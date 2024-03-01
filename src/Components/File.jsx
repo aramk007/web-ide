@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 
 function File({ name, initialcontent }) {
   const [content, setContent] = useState(initialcontent);
-  const [happy, setHappy] = useState("");
+
   useEffect(() => {
     console.log("useEffect");
-    setHappy("wow");
   }, [content]);
 
   // onChange on line 21 called our event handler function handleContentChange
@@ -16,7 +15,6 @@ function File({ name, initialcontent }) {
   const handleContentChange = (eventOnChange) => {
     setContent(eventOnChange.target.value);
     console.log("function");
-    setHappy("wow");
   };
 
   return (
@@ -26,7 +24,7 @@ function File({ name, initialcontent }) {
 
       <div id="output">
         <p>
-          You Said:{happy} {content} <br /> Character Length: {content.length}
+          You Said:{content} <br /> Character Length: {content.length}
         </p>
       </div>
     </div>
